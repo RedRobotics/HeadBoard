@@ -17,7 +17,7 @@ Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/
 
 Once your Pi is up and running, in the terminal, copy and paste:
 
-`curl -L https://raw.githubusercontent.com/NeilLambeth/Red-Robotics-Sideboard/master/setup.sh | bash`
+`curl -L https://raw.githubusercontent.com/RedRobotics/HeadBoard/master/setup.sh | bash`
 
 
 
