@@ -12,10 +12,10 @@ Simple python commands for controlling motors, servos and Neopixels.
 It's best to start with a fresh install of Raspian Lite. 
 Download it from the [Raspberry Pi](https://www.raspberrypi.org/downloads/) website.
 
-Connect your Raspberry Pi to your Wifi network.
+Set up your Pi and connect it to your Wifi network.
 Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
 
-Once your Pi is set up and running, in the terminal, copy and paste:
+Once your Pi is up and running, in the terminal, copy and paste:
 
 `curl -L https://raw.githubusercontent.com/NeilLambeth/Red-Robotics-Sideboard/master/setup.sh | bash`
 
