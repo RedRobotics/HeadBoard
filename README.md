@@ -19,10 +19,12 @@ Once your Pi is up and running, in the terminal, copy and paste:
 
 `curl -L https://raw.githubusercontent.com/RedRobotics/HeadBoard/master/setup.sh | bash`
 
+This will install all the files you need, It can take a while!
+
+##Quick Start:
 
 
-
-## Basic usage:
+## Basic Libray Usage:
 
 Open up a python shell with:  
 `sudo python`
