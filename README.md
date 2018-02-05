@@ -1,20 +1,20 @@
-# Red Robotics Sideboard V1.0 (Beta)
+# Red Robotics Sideboard V1.2 (Beta)
 
-Python library for the Red Robotics 'Sideboard' Raspberry Pi add on robotics board.
+Python library for the Red Robotics 'HeadBoard' Raspberry Pi add on robotics board.
 
-Simple python commands for motor control and Neopixels. 
+Simple python commands for controlling motors, servos and Neopixels. 
 
 
 
 
 ## Installation:
 
+It's best to start with a fresh install of Raspian Lite. Download it from the Raspberry Pi website.
+
 In the Raspberry Pi terminal, copy and paste:
 
 `curl -L https://raw.githubusercontent.com/NeilLambeth/Red-Robotics-Sideboard/master/setup.sh | bash`
 
-This can take around 10 minutes on a Pi2 on a fresh install of Raspian Lite.  
-On a PiZero it takes about 35 minutes.
 
 
 
