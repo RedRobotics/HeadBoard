@@ -1,8 +1,15 @@
-# Red Robotics Sideboard V1.2 (Beta)
+# Red Robotics Headboard V1.2 (Beta)
 
 Python library for the Red Robotics 'HeadBoard' Raspberry Pi add on robotics board.
 
-Simple python commands for controlling motors, servos and Neopixels. 
+Simple python commands for controlling motors, servos and Neopixels (WS2812B).
+
+Drive a robot with a variety of controllers with example code for Rock Candy and PiHut PS3 Gamepads, Wiimote and generic bluetooth gamepads.  
+Get a robot up and running in minutes!
+
+This guide assumes a working knowledge of the Raspberry Pi and how to set one up headlessly.
+
+Beginner video tutorials coming soon.
 
 
 
@@ -12,16 +19,39 @@ Simple python commands for controlling motors, servos and Neopixels.
 It's best to start with a fresh install of Raspian Lite. 
 Download it from the [Raspberry Pi](https://www.raspberrypi.org/downloads/) website.
 
+Pre-configured SD card image coming soon. 
+
+
 Set up your Pi and connect it to your Wifi network.
 Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
 
-Once your Pi is up and running, in the terminal, copy and paste:
+
+Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal:
+
+`sudo apt-get update && sudo apt-get upgrade -y`
+
+
+When that's finished, copy and paste:
 
 `curl -L https://raw.githubusercontent.com/RedRobotics/HeadBoard/master/setup.sh | bash`
 
-This will install all the files you need, It can take a while!
+This will install all the files you need, your Pi will reboot when the installation is finished.
 
-##Quick Start:
+
+## What's my IP address?
+If you have successfully connected to a wireless network, once your Pi has booted up it will flash the last three digits of it's IP address on the on-board Neopixel.  
+
+If your IP address is 192.168.1.123, the Neopixel will flash red once, green twice and blue three times.  
+If your IP address is 192.168.1.108, the Neopixel will flash red once then blue eight times.
+
+If you miss it, you can press the on-board push button to flash the IP address again (wait a few seconds after pressing the button).
+
+The first part of the address will be the same as the computer you are using to remotely connect to the Pi.
+On a Linux PC, in the terminal type:
+`ifconfig` 
+
+
+## Quick Start Guide To Controlling A Robot
 
 
 ## Basic Libray Usage:
@@ -31,26 +61,29 @@ Open up a python shell with:
 
 Load the neopixel module:  
 `from neopixels import *`  
-Wait for the neopixels module to load
+Wait for the neopixels module to load (It can take a few seconds).
 
 
 To set the on-board neopixel to full red type:
 
 `red()`
 
-This also works with blue and green:
+You can also set the brightness by adding number between 0-255, eg. half bright:
+
+`red(127)`
+
+This also works with blue and green and white:
 
 `blue()`
 
-`green()`  
+`green()`
+
+`white()`
 
 If you want different colours, use:  
 `setColour(0,128,0,128)`  
-This will give you purple. The first value is the position of the neopixel (0 for the one on the Sideboard).  
+This will give you purple. The first value is the position of the neopixel (0 for the one on the Headboard).  
 The next three numbers are the red, green and blue values.
-
-For white:  
-`setColour(0,255,255,255)`
 
 Orange:  
 `setColour(0,255,165,000)`
@@ -67,7 +100,7 @@ __Ctrl + c__ to stop
 Attach more Neopixels to the 3pin header, pin closest to the led is +v then Data then Ground. 
 
 With eight led's attached - try:  
-`knightRider()`
+`knightrider()`
 __Ctrl + c__ to stop
 
 
@@ -78,29 +111,43 @@ To turn all neopixels off:
 
 ## Motors
 
-`from sideboard import *`
+`from headboard import *`
 
-Right motor full speed forwards:  
-`r_motor(100)` 
+Motor1 full speed forwards:  
+`M1(100)` 
 
-Right motor half speed forwards:  
-`r_motor(50)`
+Motor1 half speed forwards:  
+`M1(50)`
 
-Right motor full speed backwards:  
-`r_motor(-100)`
+Motor1 full speed backwards:  
+`M1(-100)`
 
-Right motor stop:  
-`r_motor(0)`
+Motor1 stop:  
+`M1(0)`
 
-Left motor full speed forwards:  
-`l_motor(100)`
+Motor2 full speed forwards:  
+`M2(100)`
 
-Left motor stop:  
-`l_motor(0)`
+Motor2 stop:  
+`M2(0)`
 
-## Servos (Headboard only)  
+If you prefer, you can use 8 bit values (0-255) to set the speed. This is useful if you are using analogue joysticks to control your robot. You can send the value read from the joystick straight to the motor.  
+See the Rock Candy and PiHut PS3 programs for examples.
 
-`from sideboard import *`
+Motor1 full speed:  
+M1_255(255)
+
+Motor2 half speed:  
+M2_255(127)
+
+Motor2 half speed Backwards:
+M2_255(-127)
+
+
+
+## Hobby Servo motors
+
+`from headboard import *`
 
 You can connect two servos - servo0 and servo1
 
