@@ -48,7 +48,11 @@ If you miss it, you can press the on-board push button to flash the IP address a
 
 The first part of the address will be the same as the computer you are using to remotely connect to the Pi.
 On a Linux PC, in the terminal type:
+
 `ifconfig` 
+
+![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Dev/ifconfig.png)
+
 
 
 ## Quick Start Guide To Controlling A Robot
