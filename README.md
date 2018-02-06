@@ -51,7 +51,7 @@ On a Linux PC, in the terminal type:
 
 `ifconfig` 
 
-![ifconfig](https://github.com/RedRobotics/HeadBoard/blob/Dev/ifconfig.png)
+![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Dev/ifconfig.png)
 
 
 ## Quick Start Guide To Controlling A Robot
