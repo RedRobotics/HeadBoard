@@ -53,7 +53,7 @@ On a Linux PC, in the terminal type:
 
 `ifconfig` 
 
-![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Dev/ifconfig.png)
+![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Images/ifconfig.png)
 
 The highlighted text shows the IP address, take the first three sets of digits then add the number as shown on the Neopixel.
 If the Neopixel flashed red once, green once and blue twice, your IP would be: 192.168.1.112
