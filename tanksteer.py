@@ -7,7 +7,8 @@ Leftmotor = 0
 Rightmotor = 0
 LM_OLD = 0
 RM_OLD = 0
-turbo = False 
+turbo = False
+invertX = False
 
 #print(dev)
 
@@ -71,8 +72,15 @@ for event in dev.read_loop():
             elif event.code == L3:
                 print 'L3'
 
-            elif event.code == select:
-                print 'Select'
+            elif event.code == select and invertX == False:
+                print 'Invert X'
+                invertX = True
+            
+            elif event.code == select and invertX == True:
+                print 'Normal X'
+                invertX = False
+                
+                
             elif event.code == start:
                 print 'Start'
             elif event.code == home:
@@ -172,12 +180,15 @@ for event in dev.read_loop():
     LM_OLD = LM
     RM_OLD = RM
 
-    ## Set right motor speed and direction
-    sideboard.M2_255(LM)
-    
-    
-    # Set left motor speed and direction    
-    sideboard.M1_255(RM) 
+    if invertX == True:  # Reverse steering controls
+        #print("Inverted steering")
+        redboard.M2_255(RM)
+        redboard.M1_255(LM)
+
+    else:  # Normal steering controls
+        #print ("Normal steering")
+        redboard.M2_255(LM)
+        redboard.M1_255(RM) 
 
 
 
