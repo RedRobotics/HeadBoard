@@ -8,6 +8,7 @@ Drive a robot with a variety of controllers with example code for Rock Candy and
 Get a robot up and running in minutes!
 
 This guide assumes a working knowledge of the Raspberry Pi,how to set one up headlessly, and how to connect remotely via SSH.
+Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
 
 Beginner tutorials and videos coming soon.
 
@@ -23,7 +24,7 @@ Pre-configured SD card image coming soon.
 
 
 Set up your Pi and connect it to your Wifi network.
-Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
+
 
 
 Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal:
@@ -56,7 +57,7 @@ On a Linux PC, in the terminal type:
 ![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Images/ifconfig.png)
 
 The highlighted text shows the IP address, take the first three sets of digits then add the number as shown on the Neopixel.
-If the Neopixel flashed red once, green once and blue twice, your IP would be: 192.168.1.112
+If the Neopixel flashed red once, green once and blue twice, your PI's IP address would be: 192.168.1.112
 
 
 Screenshots for Windows coming soon!
