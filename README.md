@@ -11,7 +11,7 @@ This guide assumes a working knowledge of the Raspberry Pi,how to set one up hea
 
 Beginner tutorials and videos coming soon.
 
-
+![Connection Guide](https://github.com/RedRobotics/RedBoard/blob/Images/Headboard_V1-2_text.png)
 
 
 ## Installation:
