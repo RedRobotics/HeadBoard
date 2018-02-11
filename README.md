@@ -45,7 +45,7 @@ If you have successfully connected to a wireless network, once your Pi has boote
 You can of course use raspberrypi.local, but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).
 
 If your IP address is 192.168.0.123, the Neopixel will flash red once, green twice and blue three times.  
-If your IP address is 172.42.1.108, the Neopixel will flash red once then blue eight times.
+If your IP address is 172.16.1.108, the Neopixel will flash red once then blue eight times.
 
 If you miss it, you can momentarily press the on-board push button to flash the IP address again (wait a few seconds after pressing the button. Also - don't hold the button down as this will reset the Pi - more on this later!).
 
@@ -87,7 +87,8 @@ You should now be able to drive your bot around using the following keys:
 W = Forward  
 S = Backwards  
 A = Left  
-D = Right  
+D = Right 
+T = Turbo - toggles fast and slow 
 If you need to stop quickly, hit the Spacebar!
 
 If your robot goes in the wrong direction, you may need to swap over the wires that go to the motor(s). Press the W key to go forwards and check which way the motors turn, if one (or both) go backwards, swap it's wires over.    
