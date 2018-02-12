@@ -87,8 +87,8 @@ You should now be able to drive your bot around using the following keys:
 W = Forward  
 S = Backwards  
 A = Left  
-D = Right 
-T = Turbo - toggles fast and slow 
+D = Right  
+T = Turbo - toggles fast and slow  
 If you need to stop quickly, hit the Spacebar!
 
 If your robot goes in the wrong direction, you may need to swap over the wires that go to the motor(s). Press the W key to go forwards and check which way the motors turn, if one (or both) go backwards, swap it's wires over.    
