@@ -93,6 +93,14 @@ If you need to stop quickly, hit the Spacebar!
 
 If your robot goes in the wrong direction, you may need to swap over the wires that go to the motor(s). Press the W key to go forwards and check which way the motors turn, if one (or both) go backwards, swap it's wires over.    
 
+If you have a [RockCandy](https://www.amazon.co.uk/Rock-Candy-Wireless-Controller-Red/dp/B00G6CLXRK/ref=sr_1_3?ie=UTF8&qid=1518395269&sr=8-3&keywords=rock+candy+ps3) or [PiHut](https://thepihut.com/products/raspberry-pi-compatible-wireless-gamepad-controller) PS3 controller, you can run the tanksteer.py or carsteer.py programs. They work with either controller.  
+
+With the tanksteer program, the left analogue stick controls the left motor and the right stick controls the right motor. Push both sticks up for forward, both down for backwards and one up, one down to turn.  
+
+For carsteer the left stick controls the speed and direction of both motors - push up to go forwards and down for backwards. The right stick is for steering - push the stick left or right to steer.
+
+
+
 
 ## Reset/Shutdown switch
 
