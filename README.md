@@ -69,7 +69,7 @@ We have created a number of different robots and the files will be available to 
 
 Here's an image to show you how to wire up your bot:
 
-![Wiring]()
+![Simple Robot](https://github.com/RedRobotics/RedBoard/blob/Images/Headboard_SimpleRobot.png)
 
 The Headboard can drive two motors independently, at 1Amp each continuously.  
 If your Pi resets unexpectedly, you are probably trying to drive motors that are too large (more on this later). 
