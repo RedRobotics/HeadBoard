@@ -5,7 +5,7 @@ Python library for the Red Robotics 'HeadBoard' Raspberry Pi add on robotics boa
 Simple python commands for controlling motors, servos and Neopixels (WS2812B).
 
 Drive a robot with a variety of controllers with example code for Rock Candy and PiHut PS3 Gamepads, Wiimote and generic bluetooth gamepads.  
-Get a robot up and running in minutes!
+Get a robot up and running in minutes!  
 
 This guide assumes a working knowledge of the Raspberry Pi,how to set one up headlessly, and how to connect remotely via SSH.
 Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
