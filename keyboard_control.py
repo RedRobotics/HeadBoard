@@ -1,9 +1,11 @@
+# Control a robot from the terminal using the keyboard.
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 import curses
 import time
 import redboard
 stdscr = curses.initscr()
 curses.noecho()
-#curses.cbreak()
 stdscr.keypad(True)
 
 print("\r")
@@ -12,7 +14,8 @@ print("S = Backwards\r")
 print("A = Left\r")
 print("D = Right\r")
 print("Spacebar = Stop\r")
-print("T = Turbo")
+print("T = Turbo\r")
+print("R = Reverse Steering\r")
 
 time.sleep(3)
 
@@ -21,6 +24,7 @@ def main(stdscr):
     motor1 = 0
     motor2 = 0
     turbo = False
+    rSteer = False
     
     keypress = 0
     up = 0
@@ -37,18 +41,14 @@ def main(stdscr):
             print("Forward")
             print("\r")
             stop = 0
-            #redboard.M2 (100)
-            #redboard.M1 (100)
-            motor1 = 100
-            motor2 = 100
+            motor1 = 100  # Set motor speed and direction
+            motor2 = 100  # Set motor speed and direction
 
         elif c == ord('s'):
             keypress = 1
             stop = 0
             print("Backwards")
             print("\r")
-            #redboard.M2 (-100)
-            #redboard.M1 (-100)
             motor1 = -100
             motor2 = -100
 
@@ -57,8 +57,6 @@ def main(stdscr):
             stop = 0
             print("Left")
             print("\r")
-            #redboard.M2 (-100)
-            #redboard.M1 (100)
             motor1 = 100
             motor2 = -100
 			
@@ -67,8 +65,6 @@ def main(stdscr):
             stop = 0
             print("Right")
             print("\r")
-            #redboard.M2 (100)
-            #redboard.M1 (-100)
             motor1 = -100
             motor2 = 100
             
@@ -77,13 +73,28 @@ def main(stdscr):
             keypress = 1
             stop = 0
             print("Stop")
-            print("\r")
-            #redboard.M2 (0)
-            #redboard.M1 (0)    
+            print("\r")    
             motor1 = 0
             motor2 = 0                
 
-        elif c == ord('t') and turbo == False :
+
+        elif c == ord('r') and rSteer == False:
+            keypress = 1
+            stop = 0
+            rSteer = True
+            print ("Reverse Steering")
+            print("\r")
+
+        elif c == ord('r') and rSteer == True:
+            keypress = 1
+            stop = 0
+            rSteer = False
+            print ("Normal Steering")
+            print("\r")
+
+
+
+        elif c == ord('t') and turbo == False:
             keypress = 1
             stop = 0
             turbo = True
@@ -97,30 +108,44 @@ def main(stdscr):
             print ("Turbo off")
             print("\r")
 
-        if c == -1:
-            stop += 1
-            #print(stop)
-            #print("\r")
-          
 
-        if keypress == 1 and stop > 6:
+
+        # Pressing a key also produces a number of key up events.
+        # This block of code only stops the robot after at least 4 key up events have been detected.
+        # This makes driving the robot smoother but adds a short delay- 
+        # -from when you release the key until the robot stops.
+  
+        if c == -1:  # Check for key release
+            stop += 1  # Count the number of key up events          
+        if keypress == 1 and stop > 5:  # Min = 4 - If the robot pauses when you hold a key down- 
+                                        # -increase this number.
             keypress = 0
             stop = 0
             print("Stop----------------------------------------")
             print("\r")
-            #redboard.M2 (0)
-            #redboard.M1 (0)
             motor1 = 0
             motor2 = 0
 
 
-        if turbo == True:
-            redboard.M1(motor1)
-            redboard.M2(motor2)
 
+
+        # Half the speed if Turbo is off
+        if turbo == True:
+            m1 = motor1
+            m2 = motor2
+        
         elif turbo == False:
-            redboard.M1(motor1 / 2)  # divide motor speed by 2 
-            redboard.M2(motor2 / 2)  # divide motor speed by 2
+            m1 = motor1 / 2
+            m2 = motor2 / 2
+
+        # Reverse the steering if 'R' has been pressed
+        if rSteer == False:
+            redboard.M1(m1)
+            redboard.M2(m2)
+
+        else:
+            redboard.M1(m2)
+            redboard.M2(m1)
           
 curses.wrapper(main)    
             
