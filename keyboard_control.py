@@ -1,4 +1,4 @@
-# Control a robot from the terminal using the keyboard.
+# Control a robot from the terminal using your computers keyboard.
 # Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
 
 import curses

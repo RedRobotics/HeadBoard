@@ -1,3 +1,9 @@
+# Control a robot with a Rock Candy or PiHut PS3 controller.
+# The left stick controls the speed and direction of both motors - push up to go forwards and down for backwards.
+# The right stick is for steering - push the stick left or right to steer.
+
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 from evdev import InputDevice, ecodes
 import redboard
 #import ip

@@ -1,11 +1,13 @@
+#Python library for the Red Robotics 'HeadBoard' and 'SideBoard' Raspberry Pi add on robotics boards.
+#Simple python commands for controlling motors, servos and Neopixels (WS2812B).
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 import time
 import pigpio
 
 # Setup GPIO
 servo_0 = 20
 servo_1 = 21
-
-servo0_trim = -100
 
 dira = 23
 pwma = 18

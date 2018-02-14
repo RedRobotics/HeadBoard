@@ -1,3 +1,11 @@
+# This program sits in the background monitoring the switch connected to GPIO 7 of your RPi.
+# Works with RedRobotics controller boards.
+# A short press and release of the button runs the 'IP.py' program.
+# A medium press (between 1 -4 seconds) resets the RPi.
+# A long press shuts down the Pi.
+
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 import time
 import os
 import pigpio

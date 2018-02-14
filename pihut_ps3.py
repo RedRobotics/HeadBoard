@@ -1,3 +1,6 @@
+# A simple example program to display the keypresses on a PiHut PS3 controller. 
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 from evdev import InputDevice, ecodes
 import redboard
 
@@ -7,11 +10,6 @@ dev = InputDevice('/dev/input/event0')
 device = str(dev).find("HJD")
 if device != -1:
     print 'Controller: PiHut PS3 Gamepad'
-
-
-L_Fwd = 0
-R_Fwd = 0
-
 
 for event in dev.read_loop():
     #print(event)  # Uncomment to show all key data
@@ -54,7 +52,6 @@ for event in dev.read_loop():
 
             LY = event.value
             print "Left Y = ",LY
-
 
         elif event.code == 0:  # Left analogue Horizontal stick
             

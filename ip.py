@@ -1,3 +1,7 @@
+# Show the last three digits of you IP address on a Neopixel.
+# Works with RedRobotics controller boards.
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 from neopixels import *
 import time
 import socket

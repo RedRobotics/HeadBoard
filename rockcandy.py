@@ -1,3 +1,6 @@
+# A simple example program to display the keypresses on a Rockcandy PS3 controller. 
+# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+
 from evdev import InputDevice, ecodes
 import redboard
 
