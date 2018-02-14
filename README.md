@@ -34,7 +34,7 @@ Once your Pi is up and running, make sure everything is up to date by copying an
 
 When that's finished, copy and paste:
 
-`curl -L https://raw.githubusercontent.com/RedRobotics/HeadBoard/master/setup.sh | bash`
+`curl -L https://raw.githubusercontent.com/RedRobotics/RedBoard/master/setup.sh | bash`
 
 This will install all the files you need, your Pi will reboot when the installation is finished.
 
