@@ -7,7 +7,7 @@ Simple python commands for controlling motors, servos and Neopixels (WS2812B).
 Drive a robot with a variety of controllers with example code for Rock Candy and PiHut PS3 Gamepads, Wiimote and generic bluetooth gamepads.  
 Get a robot up and running in minutes!  
 
-This guide assumes a working knowledge of the Raspberry Pi,how to set one up headlessly, and how to connect remotely via SSH.
+This guide assumes a working knowledge of the Raspberry Pi, how to set one up headlessly, and how to connect remotely via SSH.
 Here's a great guide on how to do it from [Adafruit](https://learn.adafruit.com/raspberry-pi-zero-creation/overview).
 
 Beginner tutorials and videos coming soon.
@@ -84,7 +84,7 @@ Once you are connected, run the keyboard_control.py program by typing:
 `sudo python keyboard_control.py`
 
 You should now be able to drive your bot around using the following keys:  
-W = Forward  
+W = Forwards  
 S = Backwards  
 A = Left  
 D = Right  
