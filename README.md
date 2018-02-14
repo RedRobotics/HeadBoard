@@ -89,7 +89,8 @@ S = Backwards
 A = Left  
 D = Right  
 T = Turbo - toggles fast and slow  
-If you need to stop quickly, hit the Spacebar!
+R = Reverse steering - If you bot goes left when it should go right!  
+If you need to stop quickly, hit the Spacebar.
 
 If your robot goes in the wrong direction, you may need to swap over the wires that go to the motor(s). Press the W key to go forwards and check which way the motors turn, if one (or both) go backwards, swap it's wires over.    
 
@@ -108,7 +109,7 @@ Short press- less than a second: the on-board red LED will flash off, The on-boa
 
 Medium press - between 1 and 4 seconds: On-board red LED flashes on and off - Pi resets.
 
-Long press - greater than 4 seconds: On-board red LED turns off - Pi shutsdown.
+Long press - greater than 4 seconds: On-board red LED turns off - Pi shuts down.
 
 
 Wait 20 seconds before sliding the power switch to make sure the Pi has had enough time to shutdown.
@@ -130,7 +131,7 @@ To set the on-board neopixel to full red type:
 `red()`
 
 You can also set the brightness by adding a number between 0-255,  
-eg. half bright:
+Red half bright:
 
 `red(127)`
 
@@ -156,14 +157,19 @@ Yellow:
 ### Other neopixel commands
 
 You can fade red up and down with:  
-`heartbeat()`
+`heartBeat()`
 __Ctrl + c__ to stop
 
 Attach more Neopixels to the 3pin header, pay attention to the pin markings on the board (picture coming soon).
 
 With eight led's attached - try:  
-`knightrider()`
+`knightRider()`
 __Ctrl + c__ to stop
+
+
+To run the Adafruit example:  
+`demo()`  
+Check the neopixels.py program for code examples.
 
 There will be a tutorial soon to show how to sequence Neopixels at the same time as driving your bot.
 
@@ -196,16 +202,16 @@ Motor2 stop:
 `M2(0)`
 
 If you prefer, you can use 8 bit values (0-255) to set the speed. This is useful if you are using analogue joysticks to control your robot. You can send the value read from the joystick straight to the motor.  
-See the Rock Candy and PiHut PS3 programs for examples.
+See the tanksteer.py and carsteer.py programs for examples.
 
 Motor1 full speed:  
-`M1_255(255)`
+`M1_8bit(255)`
 
 Motor2 half speed:  
-`M2_255(127)`
+`M2_8bit(127)`
 
 Motor2 half speed Backwards:  
-`M2_255(-127)`
+`M2_8bit(-127)`
 
 
 
