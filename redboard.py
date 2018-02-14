@@ -4,6 +4,7 @@
 
 import time
 import pigpio
+from neopixels import *
 
 # Setup GPIO
 servo_0 = 20
@@ -140,7 +141,7 @@ def M1(lm):
             pi.set_PWM_dutycycle(pwmb,LM)   
 
 
-def M1_255(lm):  
+def M1_8bit(lm):  
 
             if lm > 255:  # Make sure the value sent to the motor is 255 or less
                 print("Out of range")
@@ -200,7 +201,7 @@ def M2(rm):
             pi.set_PWM_dutycycle(pwma,RM)
 
 
-def M2_255(rm):  
+def M2_8bit(rm):  
 
             if rm > 255:  # Make sure the value sent to the motor is 255 or less
                 print("Out of range")
