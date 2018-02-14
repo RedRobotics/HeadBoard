@@ -53,7 +53,6 @@ for event in dev.read_loop():
             LY = event.value
             print "Left Y = ",LY
 
-
         elif event.code == 0:  # Left analogue Horizontal stick
             
             LX = event.value

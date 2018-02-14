@@ -188,13 +188,13 @@ for event in dev.read_loop():
 
     if invertX == True:  # Reverse steering controls
         #print("Inverted steering")
-        redboard.M2_255(RM)
-        redboard.M1_255(LM)
+        redboard.M2_8bit(RM)
+        redboard.M1_8bit(LM)
 
     else:  # Normal steering controls
         #print ("Normal steering")
-        redboard.M2_255(LM)
-        redboard.M1_255(RM) 
+        redboard.M2_8bit(LM)
+        redboard.M1_8bit(RM) 
 
 
 

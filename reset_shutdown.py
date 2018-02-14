@@ -86,6 +86,5 @@ while True:
           
                       
     except KeyboardInterrupt: 
-        #disconnect
         pi.stop()
         exit()
