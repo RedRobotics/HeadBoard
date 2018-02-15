@@ -32,7 +32,7 @@ Once your Pi is up and running, make sure everything is up to date by copying an
 `sudo apt-get update && sudo apt-get upgrade -y`
 
 
-When that's finished, copy and paste:
+When that's finished, enter:
 
 `curl -L https://raw.githubusercontent.com/RedRobotics/RedBoard/master/setup.sh | bash`
 
