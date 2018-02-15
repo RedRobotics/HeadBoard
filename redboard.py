@@ -2,6 +2,8 @@
 #Simple python commands for controlling motors, servos and Neopixels (WS2812B).
 # Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
 
+print("Please wait while modules load...")
+
 import time
 import pigpio
 from neopixels import *
