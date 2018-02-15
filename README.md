@@ -27,7 +27,7 @@ Set up your Pi and connect it to your Wifi network.
 
 
 
-Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal:
+Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal, then hit the **'ENTER'** key:
 
 `sudo apt-get update && sudo apt-get upgrade -y`
 
@@ -79,9 +79,11 @@ Once your battery pack and motors are wired up, it's easy to start controlling y
 Power up your Pi by switching the power switch to the on position.
 When it's powered up, SSH into it from your PC. Adafruit's guide [here](https://learn.adafruit.com/adafruits-raspberry-pi-lesson-6-using-ssh?view=all).
 
-Once you are connected, run the keyboard_control.py program by typing:
+Once you are connected, run the keyboard_control.py program by entering:
 
 `sudo python keyboard_control.py`
+
+Wait for a few seconds for everything to load.
 
 You should now be able to drive your bot around using the following keys:  
 W = Forwards  
@@ -121,27 +123,33 @@ The reset switch can be reprogrammed for your own use - more on this later.
 Open up a python shell with:  
 `sudo python`
 
-Load the neopixel module:  
-`from neopixels import *`  
-Wait for the neopixels module to load (It can take a few seconds).
+Load the redboard module:  
+`import redboard`  
+
+
+Wait for a few seconds, the neopixels module takes a few seconds to load.
+
+##Neopixels (WS2812B)
+
+Let's start with the on-board Neopixel, as you don't need to plug anything else into the board. 
 
 
 To set the on-board neopixel to full red type:
 
-`red()`
+`redboard.red()`
 
 You can also set the brightness by adding a number between 0-255,  
 Red half bright:
 
-`red(127)`
+`redboard.red(127)`
 
 This also works with blue and green and white:
 
-`blue()`
+`redboard.blue()`
 
-`green()`
+`redboard.green()`
 
-`white()`
+`redboard.white()`
 
 If you want different colours, use:  
 `setColour(0,128,0,128)`  
@@ -149,106 +157,103 @@ This will give you purple. The first value is the position of the neopixel (0 fo
 The next three numbers are the red, green and blue values.
 
 Orange:  
-`setColour(0,255,165,000)`
+`redboard.setColour(0,255,165,000)`
 
 Yellow:  
-`setColour(0,255,255,0)`  
+`redboard.setColour(0,255,255,0)`  
     
 ### Other neopixel commands
 
 You can fade red up and down with:  
-`heartBeat()`
+`redboard.heartBeat()`
 __Ctrl + c__ to stop
 
 Attach more Neopixels to the 3pin header, pay attention to the pin markings on the board (picture coming soon).
 
 With eight led's attached - try:  
-`knightRider()`
+`redboard.knightRider()`
 __Ctrl + c__ to stop
 
 
 To run the Adafruit example:  
-`demo()`  
+`redboard.demo()`  
 Check the neopixels.py program for code examples.
 
 There will be a tutorial soon to show how to sequence Neopixels at the same time as driving your bot.
 
 
 To turn all neopixels off:  
-`clear()`  
+`redboard.clear()`  
 
   
 
 ## Motors
 
-`from headboard import *`
 
 Motor1 full speed forwards:  
-`M1(100)` 
+`redboard.M1(100)` 
 
 Motor1 half speed forwards:  
-`M1(50)`
+`redboard.M1(50)`
 
 Motor1 full speed backwards:  
-`M1(-100)`
+`redboard.M1(-100)`
 
 Motor1 stop:  
-`M1(0)`
+`redboard.M1(0)`
 
 Motor2 full speed forwards:  
-`M2(100)`
+`redboard.M2(100)`
 
 Motor2 stop:  
-`M2(0)`
+`redboard.M2(0)`
 
 If you prefer, you can use 8 bit values (0-255) to set the speed. This is useful if you are using analogue joysticks to control your robot. You can send the value read from the joystick straight to the motor.  
 See the tanksteer.py and carsteer.py programs for examples.
 
 Motor1 full speed:  
-`M1_8bit(255)`
+`redboard.M1_8bit(255)`
 
 Motor2 half speed:  
-`M2_8bit(127)`
+`redboard.M2_8bit(127)`
 
 Motor2 half speed Backwards:  
-`M2_8bit(-127)`
+`redboard.M2_8bit(-127)`
 
 
 
 ## Hobby Servo motors
 
-`from headboard import *`
-
 You can connect two servos - servo0 and servo1
 
 Set the angle of the servo directly - to set the servo to the centre position:  
-`servo0(0)`
+`redboard.servo0(0)`
 
 Or for servo1:  
-`servo1(0)`
+`redboard.servo1(0)`
 
 90 degrees:  
-`servo0(90)`
+`redboard.servo0(90)`
 
 -45 degrees  
-`servo0(-45)`
+`redboard.servo0(-45)`
 
 If you prefer, you can set the servo position by the pulse width.
 Minimum value is 500, max is 2500.
 
 Centre:  
-`servo0_P(1500)`
+`redboard.servo0_P(1500)`
 
 +90 degrees:  
-`servo0_P(500)`
+`redboard.servo0_P(500)`
 
 -45 degrees:  
-`servo0_P(2000)`
+`redboard.servo0_P(2000)`
 
 -90 degrees:  
-`servo0_P(2500)`
+`redboard.servo0_P(2500)`
 
 Cut the power to the servo with:  
-`servo0_off()`
+`redboard.servo0_off()`
 
 
