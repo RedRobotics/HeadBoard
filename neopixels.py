@@ -12,7 +12,7 @@ print("neopixels loaded")
 
 
 # LED strip configuration:
-LED_COUNT      = 1    # Number of LED pixels.
+LED_COUNT      = 9   # Number of LED pixels.
 LED_PIN        = 12      # GPIO pin connected to the pixels (12 uses PWM!).
 #LED_PIN        = 10      # GPIO pin connected to the pixels (10 uses SPI /dev/spidev0.0).
 LED_FREQ_HZ    = 800000  # LED signal frequency in hertz (usually 800khz)
