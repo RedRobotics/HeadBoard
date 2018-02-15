@@ -13,9 +13,9 @@ sudo pip install evdev
 
 sudo apt-get install build-essential git scons swig -y
 
-sudo rm -rf Red-Robotics-Sideboard
-git clone https://github.com/NeilLambeth/Red-Robotics-Sideboard.git
-cd Red-Robotics-Sideboard
+sudo rm -rf RedBoard
+git clone https://github.com/RedRobotics/RedBoard.git
+cd RedBoard
 cp * /home/pi
 
 cd
@@ -43,6 +43,7 @@ else
     cd PIGPIO   
     make
     sudo make install
+    cd
     rm pigpio.zip
     sudo sed -i -e '$i #start Pigpio deamon\nsudo pigpiod\n' /etc/rc.local
 fi
