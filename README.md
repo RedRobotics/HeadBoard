@@ -17,14 +17,24 @@ Beginner tutorials and videos coming soon.
 
 ## Installation:
 
-It's best to start with a fresh install of Raspian Lite. 
-Download it from the [Raspberry Pi](https://www.raspberrypi.org/downloads/) website.
+Download the pre-configured SD card Image from [here](https://drive.google.com/open?id=11kTYN7HNTGfD2B19bT71drHcyxmFixkm).
 
-Pre-configured SD card image coming soon. 
+User: pi  
+Hostname: redrobotics  
+Password: redboard  
+
+Edit the **'wpa_supplicant.conf'** file and enter your WIFI details.  
+Guide and screenshots coming soon!  
+You are now good to go.
+
+
+If you like, you can install everything from scratch. It takes a very long time...
+
+It's best to start with a fresh install of Raspian Lite. 
+Download it from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/).
 
 
 Set up your Pi and connect it to your Wifi network.
-
 
 
 Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal, then hit the **'ENTER'** key:
@@ -42,7 +52,7 @@ This will install all the files you need, your Pi will reboot when the installat
 ## What's my IP address?
 If you have successfully connected to a wireless network, once your Pi has booted up it will flash the last three digits of it's IP address on the on-board Neopixel.  
 
-You can of course use raspberrypi.local, but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).
+You can of course use raspberrypi.local (or redrobotics.local if you are using the pre-configured SD image), but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).
 
 If your IP address is 192.168.0.123, the Neopixel will flash red once, green twice and blue three times.  
 If your IP address is 172.16.1.108, the Neopixel will flash red once then blue eight times.
@@ -129,7 +139,7 @@ Load the redboard module:
 
 Wait for a few seconds, the neopixels module takes a few seconds to load.
 
-##Neopixels (WS2812B)
+## Neopixels (WS2812B)
 
 Let's start with the on-board Neopixel, as you don't need to plug anything else into the board. 
 
