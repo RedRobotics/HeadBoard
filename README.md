@@ -24,7 +24,7 @@ Hostname: redrobotics
 Password: redboard  
 
 Edit the **'wpa_supplicant.conf'** file and enter your WIFI details.  
-Guide and screenshots coming soon!  
+Guide and screenshots coming soon! For now follow the Adafruit guide in the link above.
 You are now good to go.
 
 
