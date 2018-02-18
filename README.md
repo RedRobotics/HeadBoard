@@ -23,30 +23,16 @@ User: pi
 Hostname: redrobotics  
 Password: redboard  
 
-Edit the **'wpa_supplicant.conf'** file and enter your WIFI details.  
-Guide and screenshots coming soon! For now follow the Adafruit guide in the link above.
-You are now good to go.
+## Set up WiFi:
+Download the **'wpa_supplicant.conf'** file from [here](https://drive.google.com/open?id=1uCWuYTg1RJA3OcOGgZ8GjAKcLZc1t3vj).  
+Open the file using notepad or your favorite text editor.  
+Delete the text "Your WIFI Network" (keeping the quotes) and enter the name of your own WIFI network.  
+Then delete the text "Your WIFI Password" and enter your own WIFI password.  
+Save the file, Then using your file manager drag this file on to the Drive labelled **'Boot'**
 
+Eject the SD card and insert it into your Raspberry Pi. 
 
-If you like, you can install everything from scratch. It takes a very long time...
-
-It's best to start with a fresh install of Raspian Lite. 
-Download it from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/).
-
-
-Set up your Pi and connect it to your Wifi network.
-
-
-Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal, then hit the **'ENTER'** key:
-
-`sudo apt-get update && sudo apt-get upgrade -y`
-
-
-When that's finished, enter:
-
-`curl -L https://raw.githubusercontent.com/RedRobotics/RedBoard/master/setup.sh | bash`
-
-This will install all the files you need, your Pi will reboot when the installation is finished.
+Now turn on your PI. You are ready to make a robot!
 
 
 ## What's my IP address?
@@ -266,4 +252,24 @@ Centre:
 Cut the power to the servo with:  
 `redboard.servo0_off()`
 
+## Install from scratch:
+If you like, you can install everything from scratch. It takes a very long time...
+
+It's best to start with a fresh install of Raspian Lite. 
+Download it from the [Raspberry Pi website](https://www.raspberrypi.org/downloads/).
+
+
+Set up your Pi and connect it to your Wifi network.
+
+
+Once your Pi is up and running, make sure everything is up to date by copying and pasting the following in the terminal, then hit the **'ENTER'** key:
+
+`sudo apt-get update && sudo apt-get upgrade -y`
+
+
+When that's finished, enter:
+
+`curl -L https://raw.githubusercontent.com/RedRobotics/RedBoard/master/setup.sh | bash`
+
+This will install all the files you need, your Pi will reboot when the installation is finished.
 
