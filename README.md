@@ -29,11 +29,14 @@ When it's finished eject the SD card but insert it straight back into your PC.
 
 ## Set up WiFi:
 Download the **'wpa_supplicant.conf'** file from [here](https://drive.google.com/open?id=1uCWuYTg1RJA3OcOGgZ8GjAKcLZc1t3vj).  
+![WPA_Download](https://github.com/RedRobotics/RedBoard/blob/Images/WPA_download.PNG)  
 In Windows 10 look in your Downloads folder. Right click on the file then choose **'open with'** then **'More apps'** and select **Wordpad**. Don't use Notepad as it changes the text format.  
 
 Delete the text "Your WIFI Network" (keeping the quotes) and enter the name of your own WIFI network.  
 Then delete the text "Your WIFI Password" and enter your own WIFI password.  
-Save the file, Then using your file manager drag this file on to the Drive labelled **'Boot'**
+![WPA_edit](https://github.com/RedRobotics/RedBoard/blob/Images/WPA_edit.PNG)  
+Save the file, Then using your file manager drag this file on to the Drive labelled **'Boot'**  
+![WPA_Copy](https://github.com/RedRobotics/RedBoard/blob/Images/WPA_copy.PNG)
 
 Eject the SD card and insert it into your Raspberry Pi. 
 
