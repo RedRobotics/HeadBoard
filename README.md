@@ -17,15 +17,20 @@ Beginner tutorials and videos coming soon.
 
 ## Installation:
 
-Download the pre-configured SD card Image from [here](https://drive.google.com/open?id=11kTYN7HNTGfD2B19bT71drHcyxmFixkm).
+Download the pre-configured SD card Image onto your PC from [here](https://drive.google.com/open?id=11kTYN7HNTGfD2B19bT71drHcyxmFixkm).
 
 User: pi  
 Hostname: redrobotics  
 Password: redboard  
 
+Write the image to a SD Card using Etcher, free download [here](https://etcher.io/).  
+
+When it's finished eject the SD card but insert it straight back into your PC.
+
 ## Set up WiFi:
 Download the **'wpa_supplicant.conf'** file from [here](https://drive.google.com/open?id=1uCWuYTg1RJA3OcOGgZ8GjAKcLZc1t3vj).  
-Open the file using notepad or your favorite text editor.  
+In Windows 10 look in your Downloads folder. Right click on the file then choose **'open with'** then **'More apps'** and select **Wordpad**. Don't use Notepad as it changes the text format.  
+
 Delete the text "Your WIFI Network" (keeping the quotes) and enter the name of your own WIFI network.  
 Then delete the text "Your WIFI Password" and enter your own WIFI password.  
 Save the file, Then using your file manager drag this file on to the Drive labelled **'Boot'**
