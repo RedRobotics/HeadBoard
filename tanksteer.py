@@ -2,7 +2,7 @@
 # The left analogue stick controls the left motor and the right stick controls the right motor. Push both sticks up 
 # for forward, both down for backwards and one up, one down to turn.
 
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from evdev import InputDevice, ecodes
 import redboard

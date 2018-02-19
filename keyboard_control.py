@@ -1,5 +1,5 @@
 # Control a robot from the terminal using your computers keyboard.
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 import curses
 import time

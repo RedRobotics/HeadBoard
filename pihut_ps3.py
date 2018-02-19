@@ -1,5 +1,5 @@
 # A simple example program to display the keypresses on a PiHut PS3 controller. 
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from evdev import InputDevice, ecodes
 import redboard

@@ -2,7 +2,7 @@
 # The left stick controls the speed and direction of both motors - push up to go forwards and down for backwards.
 # The right stick is for steering - push the stick left or right to steer.
 
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from evdev import InputDevice, ecodes
 import redboard

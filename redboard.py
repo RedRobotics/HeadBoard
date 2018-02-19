@@ -1,6 +1,6 @@
 #Python library for the Red Robotics 'HeadBoard' and 'SideBoard' Raspberry Pi add on robotics boards.
 #Simple python commands for controlling motors, servos and Neopixels (WS2812B).
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 print("Please wait while modules load...")
 
