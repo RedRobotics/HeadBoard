@@ -4,7 +4,7 @@
 # A medium press (between 1 -4 seconds) resets the RPi.
 # A long press shuts down the Pi.
 
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 import time
 import os
@@ -25,9 +25,7 @@ pi.set_mode(button, pigpio.INPUT)
 pi.set_pull_up_down(button, pigpio.PUD_UP)
 
 pi.set_mode(redLed, pigpio.OUTPUT)
-pi.write(redLed, True)
-
-os.system('sudo python /home/pi/ip.py')  # Show IP address on neopixel  
+pi.write(redLed, True) 
 
 print ("Shutdown Script Running!") 
 
