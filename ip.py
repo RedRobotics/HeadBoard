@@ -1,15 +1,28 @@
 # Show the last three digits of you IP address on a Neopixel.
 # Works with RedRobotics controller boards.
-# Author: Neil Lambeth. neil@redrobotics.o.uk @NeilRedRobotics
+# Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from neopixels import *
 import time
 import socket
-s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-s.connect(("8.8.8.8", 80))
-ip = (s.getsockname()[0])
-#print(s.getsockname()[0])
-s.close()
+
+try:
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80))
+    ip = (s.getsockname()[0])
+    #print(s.getsockname()[0])
+    s.close()
+except socket.error:
+    print("No IP address found!")
+    white(100)
+    time.sleep(1)
+    clear()
+    time.sleep(1)
+    white(100)
+    time.sleep(1)
+    clear()
+    exit()
+
 
 #ip = "10.110.0.030"  # Test IP address
 
@@ -54,7 +67,7 @@ else:
         
 #Flash neopixel red
 for i in range(0,ip_red):
-    red()
+    red(127)
     time.sleep(0.3)
     clear() 
     time.sleep(0.3) 
@@ -62,7 +75,7 @@ for i in range(0,ip_red):
 #Flash neopixel green
 time.sleep(0.5) 
 for i in range(0,ip_green):
-    green()
+    green(127)
     time.sleep(0.3)
     clear() 
     time.sleep(0.3) 
@@ -70,7 +83,7 @@ for i in range(0,ip_green):
 #Flash neopixel blue
 time.sleep(0.5) 
 for i in range(0,ip_blue):
-    blue()
+    blue(127)
     time.sleep(0.3)
     clear() 
     time.sleep(0.3) 
