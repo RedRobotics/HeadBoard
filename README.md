@@ -17,7 +17,7 @@ Beginner tutorials and videos coming soon.
 
 ## Installation:
 
-Download the pre-configured SD card Image onto your PC from [here](https://drive.google.com/open?id=11kTYN7HNTGfD2B19bT71drHcyxmFixkm).
+Download the pre-configured SD card Image onto your PC from [here](https://drive.google.com/open?id=1hCvMvku58haLAqP9_JxuQGxmqUHnMG_a).
 
 User: pi  
 Hostname: redrobotics  
@@ -28,7 +28,11 @@ Write the image to a SD Card using Etcher, free download [here](https://etcher.i
 When it's finished eject the SD card but insert it straight back into your PC.
 
 ## Set up WiFi:
-Download the **'wpa_supplicant.conf'** file from [here](https://drive.google.com/open?id=1uCWuYTg1RJA3OcOGgZ8GjAKcLZc1t3vj).  
+Start by downloading the **'wpa_supplicant.conf'** file.  
+Right click on the following link then click on **'Open Link In New Tab'**  
+[wpa_supplicant.conf](https://drive.google.com/open?id=1uCWuYTg1RJA3OcOGgZ8GjAKcLZc1t3vj).  
+
+
 Click on the Down arrow in the top right of the screen to download the file, then click OK to save. 
  
 ![WPA_Download](https://github.com/RedRobotics/RedBoard/blob/Images/WPA_download.PNG)  
