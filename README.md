@@ -56,10 +56,12 @@ Now turn on your PI. You are ready to make a robot!
 ## What's my IP address?
 If you have successfully connected to a wireless network, once your Pi has booted up it will flash the last three digits of it's IP address on the on-board Neopixel.  
 
+If it flashes white, It's not connected to the internet.
+
 You can of course use raspberrypi.local (or redrobotics.local if you are using the pre-configured SD image), but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).
 
 If your IP address is 192.168.0.123, the Neopixel will flash red once, green twice and blue three times.  
-If your IP address is 172.16.1.108, the Neopixel will flash red once then blue eight times.
+If your IP address is 172.16.1.108, the Neopixel will flash red once, it won't flash green then it will flash blue eight times. 
 
 If you miss it, you can momentarily press the on-board push button to flash the IP address again (wait a few seconds after pressing the button. Also - don't hold the button down as this will reset the Pi - more on this later!).
 
