@@ -107,7 +107,7 @@ S = Backwards
 A = Left  
 D = Right  
 T = Turbo - toggles fast and slow  
-R = Reverse steering - If you bot goes left when it should go right!  
+R = Reverse steering - If your bot goes left when it should go right!  
 If you need to stop quickly, hit the Spacebar.
 
 If your robot goes in the wrong direction, you may need to swap over the wires that go to the motor(s). Press the W key to go forwards and check which way the motors turn, if one (or both) go backwards, swap it's wires over.    
