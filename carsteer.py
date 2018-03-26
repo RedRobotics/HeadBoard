@@ -61,10 +61,8 @@ for event in dev.read_loop():
         if event.value == 1:  # Button pressed
             if event.code == triangle:
                 print 'triangle'
-                ip.red()
             elif event.code == x:
                 print 'X'
-                ip.clear()
             elif event.code == square:
                 print 'Square'
             elif event.code == circle:
