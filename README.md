@@ -4,6 +4,8 @@ Python library for the Red Robotics 'HeadBoard' Raspberry Pi add on robotics boa
 
 Simple python commands for controlling motors, servos and Neopixels (WS2812B).
 
+Works with Python 2 or 3.
+
 Drive a robot with a variety of controllers with example code for Rock Candy and PiHut PS3 Gamepads, Wiimote and generic bluetooth gamepads.  
 Get a robot up and running in minutes!  
 
@@ -70,6 +72,8 @@ On a Linux PC, in the terminal type:
 
 `ifconfig` 
 
+Then hit the 'Enter' key.
+
 ![ifconfig](https://raw.githubusercontent.com/RedRobotics/HeadBoard/Images/ifconfig.png)
 
 The highlighted text shows the IP address, take the first three sets of digits then add the number as shown on the Neopixel.
@@ -97,7 +101,11 @@ When it's powered up, SSH into it from your PC. Adafruit's guide [here](https://
 
 Once you are connected, run the keyboard_control.py program by entering:
 
-`sudo python keyboard_control.py`
+`sudo python3 keyboard_control.py`
+
+Then hit the 'Enter' key.
+
+TIP! - The Neopixel library needs 'sudo' to work.
 
 Wait for a few seconds for everything to load.
 
@@ -136,8 +144,10 @@ The reset switch can be reprogrammed for your own use - more on this later.
 
 ## Basic Library Usage:
 
+Follow all commands with the 'Enter' key.
+
 Open up a python shell with:  
-`sudo python`
+`sudo python3`
 
 Load the redboard module:  
 `import redboard`  
