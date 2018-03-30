@@ -6,6 +6,7 @@
 
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
+from __future__ import print_function  # Make print work with python 2 & 3
 import time
 import os
 import pigpio
@@ -58,7 +59,7 @@ while True:
 
           if elaspedTime <1:
               print("Show IP")  
-              os.system('sudo python /home/pi/ip.py')  # Show IP address on neopixel   
+              os.system('sudo python3 /home/pi/ip.py')  # Show IP address on neopixel   
           
           if elaspedTime >1 and elaspedTime <4:
               print("Reboot")   

@@ -1,6 +1,7 @@
 # A simple example program to display the keypresses on a PiHut PS3 controller. 
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
+from __future__ import print_function  # Make print work with python 2 & 3
 from evdev import InputDevice, ecodes
 import redboard
 
@@ -9,7 +10,7 @@ dev = InputDevice('/dev/input/event0')
 
 device = str(dev).find("HJD")
 if device != -1:
-    print 'Controller: PiHut PS3 Gamepad'
+    print ('Controller: PiHut PS3 Gamepad')
 
 for event in dev.read_loop():
     #print(event)  # Uncomment to show all key data
@@ -19,31 +20,31 @@ for event in dev.read_loop():
         #print(event.code)  # Uncomment to show each keycode
         if event.value == 1:  # Key down
             if event.code == 304:
-                print 'X'
+                print ('X')
             elif event.code == 305:
-                print 'Circle'
+                print ('Circle')
             elif event.code == 307:
-                print 'Square'
+                print ('Square')
             elif event.code == 308:
-                print 'Triangle'
+                print ('Triangle')
             elif event.code == 310:
-                print 'L1'
+                print ('L1')
             elif event.code == 311:
-                print 'R1'   
+                print ('R1')   
             elif event.code == 312:
-                print 'L2'     
+                print ('L2')     
             elif event.code == 313:
-                print 'R2'
+                print ('R2')
             elif event.code == 314:
-                print 'Select'
+                print ('Select')
             elif event.code == 315:
-                print 'Start'
+                print ('Start')
             elif event.code == 316:
-                print 'Analog'
+                print ('Analog')
             elif event.code == 317:
-                print 'L3'
+                print ('L3')
             elif event.code == 318:
-                print 'R3'
+                print ('R3')
 
 
     if event.type == ecodes.EV_ABS:
@@ -73,15 +74,15 @@ for event in dev.read_loop():
 
         if event.code == 16:  # Dpad
             if event.value == -1:
-                print 'Dpad LEFT'            
+                print ('Dpad LEFT')            
             if event.value == 1: 
-                print 'Dpad RIGHT'
+                print ('Dpad RIGHT')
 
         if event.code == 17:
             if event.value == -1:
-                print 'Dpad UP'            
+                print ('Dpad UP')            
             if event.value == 1: 
-                print 'Dpad DOWN'
+                print ('Dpad DOWN')
 
 
 

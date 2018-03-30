@@ -1,12 +1,12 @@
 #Python library for the Red Robotics 'HeadBoard' and 'SideBoard' Raspberry Pi add on robotics boards.
 #Simple python commands for controlling motors, servos and Neopixels (WS2812B).
+#Version 1.21 30/3/2018
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
-print("Please wait while modules load...")
-
+from __future__ import print_function  # Make print work with python 2 & 3
 import time
 import pigpio
-from neopixels import *
+
 
 # Setup GPIO
 servo_0 = 20
@@ -45,20 +45,17 @@ pi.set_PWM_frequency(pwmb, 100)
 pi.set_mode(servo_0, pigpio.OUTPUT)
 pi.set_mode(servo_1, pigpio.OUTPUT)
 
-print("Sideboard loaded")
-
-
-
+print("Redboard Library V1.21 loaded")
 
 def servo0(pos0):
     if pos0 >= 0 and pos0 <91:
-        print ("servo0 ="),(pos0)
+        print ("servo0 =",pos0)
         pos0 = 1500 - (pos0 * 11.1)
         #print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
     
     elif pos0 < 0 and pos0 >-91:
-        print ("servo0 ="),(pos0)
+        print ("servo0 =",pos0)
         pos0 = (abs(pos0) * 11.1) + 1500
         #print (pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
@@ -68,7 +65,7 @@ def servo0(pos0):
 
 def servo0_P(pos0):
     if pos0 >499 and pos0 <2501:
-        print ("servo0 ="),(pos0)
+        print ("servo0 =",pos0)
         pi.set_servo_pulsewidth(servo_0, pos0)
 
     else:
@@ -83,13 +80,13 @@ def servo0_off():
  
 def servo1(pos1):
     if pos1 >= 0 and pos1 <91:
-        print ("servo1 ="),(pos1)
+        print ("servo1 =",pos1)
         pos1 = 1500 - (pos1 * 11.1)
         #print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
     
     elif pos1 < 0 and pos1 >-91:
-        print ("servo1 ="),(pos1)
+        print ("servo1 =",pos1)
         pos1 = (abs(pos1) * 11.1) + 1500
         #print (pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
@@ -100,7 +97,7 @@ def servo1(pos1):
 
 def servo1_P(pos1):
     if pos1 >499 and pos1 <2501:
-        print ("servo1 ="),(pos1)
+        print ("servo1 =",pos1)
         pi.set_servo_pulsewidth(servo_1, pos1)
 
     else:
@@ -129,13 +126,13 @@ def M1(lm):
             if lMotor > 0:
                 pi.write(dirb, FWD)  # Go forwards
                 LM = lMotor
-                #print("Motor1  ="),(lm),("\r")
-                ##print("Actual = "),(LM)
+                #print("Motor1  =",lm,"\r")
+                #print("Actual = ",LM)
             elif lMotor < 0:  
                 pi.write(dirb, BWD)  # Go backwards
                 LM = abs(lMotor)  # Make positive
-                #print("Motor1  ="),(lm),("\r")
-                ##print("Actual = -"),(LM)
+                #print("Motor1  =",lm,"\r")
+                #print("Actual = -",LM)
             else:
                 #print("M1 Stop\r")
                 LM = 0  # Stop  
@@ -157,13 +154,13 @@ def M1_8bit(lm):
             if lm > 0:
                 pi.write(dirb, FWD)  # Go forwards
                 LM = lm
-                #print("Motor1  ="),(lm),("\r")
-                #print("Actual = "),(LM)
+                #print("Motor1  =",lm,"\r")
+                #print("Actual = ",LM)
             elif lm < 0:  
                 pi.write(dirb, BWD)  # Go backwards
                 LM = abs(lm)  # Make positive
-                #print("Motor1  ="),(lm),("\r")
-                #print("Actual = -"),(LM)
+                #print("Motor1  =",lm,"\r")
+                #print("Actual = -",LM)
             else:
                 #print("M1 Stop\r")
                 LM = 0  # Stop  
@@ -188,14 +185,14 @@ def M2(rm):
             if rMotor > 0:  
                 pi.write(dira, FWD)  # Go forwards
                 RM = rMotor
-                #print("Motor2 ="),(rm),("\r")
-                ##print("Actual = "),(RM)
+                #print("Motor2 =",rm,"\r")
+                #print("Actual = ",RM)
 
             elif rMotor < 0:  
                 pi.write(dira, BWD)  # Go backwards
                 RM = abs(rMotor)  # Make positive
-                #print("Motor2 ="),(rm),("\r")
-                ##print("Actual = -"),(RM)
+                #print("Motor2 =",rm,"\r")
+                #print("Actual = -",RM)
             else:
                 #print("M2 Stop\r")
                 RM = 0  # Stop            
@@ -217,14 +214,14 @@ def M2_8bit(rm):
             if rm > 0:
                 pi.write(dira, FWD)  # Go forwards
                 RM = rm
-                #print("Motor1  ="),(rm),("\r")
-                #print("Actual = "),(RM)
+                #print("Motor1  =",rm,"\r")
+                #print("Actual = ",RM)
             elif rm < 0:  
                 pi.write(dira, BWD)  # Go backwards
                 pi.write(dira, BWD)  # Go backwards
                 RM = abs(rm)  # Make positive
-                #print("Motor1  ="),(rm),("\r")
-                #print("Actual = -"),(RM)
+                #print("Motor1  =",rm,"\r")
+                #print("Actual = -",RM)
             else:
                 #print("M1 Stop\r")
                 RM = 0  # Stop  

@@ -1,6 +1,7 @@
 # Control a robot from the terminal using your computers keyboard.
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
+from __future__ import print_function # Make print work with python 2 & 3
 import curses
 import time
 import redboard
@@ -111,7 +112,7 @@ def main(stdscr):
 
 
         # Pressing a key also produces a number of key up events.
-        # This block of code only stops the robot after at least 4 key up events have been detected.
+        # This block of code only stops the robot moving after at least 4 key up events have been detected.
         # This makes driving the robot smoother but adds a short delay- 
         # -from when you release the key until the robot stops.
   

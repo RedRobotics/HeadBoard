@@ -4,6 +4,7 @@
 
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
+from __future__ import print_function  # Make print work with python 2 & 3
 from evdev import InputDevice, ecodes
 import redboard
 #import ip
@@ -11,12 +12,12 @@ import redboard
 dev = InputDevice('/dev/input/event0')
 #print(dev)
 
-device = str(dev).find("Rock Candy")  # Look for a Rock Candy or PiHut controller
+device = str(dev).find('Rock Candy')  # Look for a Rock Candy or PiHut controller
 if device != -1:
-    print 'Controller: Rock Candy PS3 Gamepad'
+    print ('Controller: Rock Candy PS3 Gamepad')
     controller = 1
 else:
-    print 'Controller: PiHut PS3 Gamepad'
+    print ('Controller: PiHut PS3 Gamepad')
     controller = 2
 
 
@@ -60,71 +61,67 @@ for event in dev.read_loop():
         #print(event.code)  # Uncomment to show each keycode
         if event.value == 1:  # Button pressed
             if event.code == triangle:
-                print 'triangle'
+                print ('triangle')
             elif event.code == x:
-                print 'X'
+                print ('X')
             elif event.code == square:
-                print 'Square'
+                print ('Square')
             elif event.code == circle:
-                print 'Circle'
+                print ('Circle')
 
             elif event.code == R1:
-                print 'R1 - Turbo On'
+                print ('R1 - Turbo On')
                 turbo = True
 
             elif event.code == R2:
-                print 'R2' 
+                print ('R2') 
             elif event.code == R3:
-                print 'R3' 
+                print ('R3') 
     
             elif event.code == L1:
-                print 'L1'
+                print ('L1')
             elif event.code == L2:
-                print 'L2'
+                print ('L2')
             elif event.code == L3:
-                print 'L3'
+                print ('L3')
 
             elif event.code == select and invertX == False:
-                print 'Invert X'
+                print ('Invert X')
                 invertX = True
             
             elif event.code == select and invertX == True:
-                print 'Normal X'
+                print ('Normal X')
                 invertX = False
                 
                 
             elif event.code == start:
-                print 'Start'
+                print ('Start')
             elif event.code == home:
-                print 'Home'
+                print ('Home')
 
         if event.value == 0:  # Button released
             if event.code == R1:  # Turbo Off
-                print 'R1 - Turbo Off' 
+                print ('R1 - Turbo Off') 
                 turbo = False
-                
-            #if event.code == select:  # Turbo Off
-            #    print 'Normal X' 
-            #    invertX = False 
 
 
     if event.type == ecodes.EV_ABS:
-        print''
-        print'---------------------------------'
+        print('')
+        print('---------------------------------')
 
 
         # Dpad
         if event.code == 16: 
             if event.value == -1:
-                print 'Dpad LEFT'            
+                print ('Dpad LEFT')            
             if event.value == 1: 
-                print 'Dpad RIGHT'
+                print ('Dpad RIGHT')
 
         if event.code == 17:
             if event.value == -1:
-                print 'Dpad UP'            
+                print ('Dpad UP')            
             if event.value == 1: 
-                print 'Dpad DOWN'
+                print ('Dpad DOWN')
 
 
         # Analogue sticks
@@ -137,14 +134,14 @@ for event in dev.read_loop():
             LY = event.value
             if LY < 128:  # Forwards
                 LeftY = 127 - LY
-                #print'LY =',LY
-                #print "LeftY = ",LeftY
+                #print('LY =',LY)
+                #print('LeftY = ',LeftY)
 
             elif LY >= 128:  # Backwards
                 LeftY = LY - 128
                 LeftY = -LeftY  # Make negative
-                #print'LY =',LY
-                #print "LeftY = ",LeftY
+                #print('LY =',LY)
+                #print('LeftY = ',LeftY)
 
 
         elif event.code == 0:  # Left analogue Horizontal stick
@@ -152,11 +149,11 @@ for event in dev.read_loop():
             LX = event.value
             if LX < 128:  # Left
                 L_Left = 127 - LX
-                print "L_Left = ",L_Left
+                print ('L_Left = ',L_Left)
 
             elif LX >= 127:  # Right
                 L_Right = LX - 128
-                print "L_Right = ",L_Right    
+                print ('L_Right = ',L_Right)    
 
 
         elif event.code == 5:  # Right analogue Vertical stick 
@@ -164,12 +161,12 @@ for event in dev.read_loop():
             RY = event.value
             if RY <= 128:  # Forwards
                 R_Fwd = 127 - RY
-                print "R_Fwd = ",R_Fwd
+                print ('R_Fwd = ',R_Fwd)
 
             elif RY >= 127:  # Backwards
                 R_Fwd = RY - 128
                 R_Fwd = -R_Fwd  # Make negative
-                print "R_Rev = ",R_Fwd
+                print ('R_Rev = ',R_Fwd)
 
 
 
@@ -183,13 +180,13 @@ for event in dev.read_loop():
             RX = event.value
             if RX < 128:  # Left
                 RightX_L = 127 - RX
-                #print'RX =',RX
-                #print "RightX_Left = ",RightX_L
+                #print('RX =',RX)
+                #print('RightX_Left = ',RightX_L)
 
             if RX > 128:  # Right
                 RightX_R = RX - 128
-                #print 'RX = ',RX
-                #print "RightX_Right = ",RightX_R
+                #print('RX = ',RX)
+                #print('RightX_Right = ',RightX_R)
   
             if RX == 128:  # Make sure both values are zero if stick is in the centre
                 RightX_L = 0
@@ -209,7 +206,7 @@ for event in dev.read_loop():
 
 
         elif LY <= 128:  # Forwards 
-            print 'Forwards'
+            print ('Forwards')
             Leftmotor = LeftY - RightX_L  # Mix steering values
             if Leftmotor <1:  # Stop motor going backwards
                 Leftmotor = 0;
@@ -218,7 +215,7 @@ for event in dev.read_loop():
                 Rightmotor = 0;
 
         elif LY >= 127:  # Backwards
-            print'Backwards'
+            print('Backwards')
             Leftmotor = LeftY + RightX_L  # Mix steering values
             if Leftmotor >-1:  # Stop motor going forwards
                 Leftmotor = 0;
@@ -240,8 +237,8 @@ for event in dev.read_loop():
         RM = Rightmotor
 
     if LM != LM_OLD or RM != RM_OLD:  # Only print motor speeds if they have changed 
-        print 'Left motor  =',LM
-        print 'Right motor =',RM
+        print ('Left motor  =',LM)
+        print ('Right motor =',RM)
 	
     LM_OLD = LM
     RM_OLD = RM
@@ -250,12 +247,12 @@ for event in dev.read_loop():
     # Set motor speed and direction	
      	
     if invertX == True:  # Reverse steering controls
-        print("Inverted steering")
+        print('Inverted steering')
         redboard.M2_8bit(RM)
         redboard.M1_8bit(LM)
 
     else:  # Normal steering controls
-        print ("Normal steering")
+        #print ('Normal steering')
         redboard.M2_8bit(LM)
         redboard.M1_8bit(RM) 
      
