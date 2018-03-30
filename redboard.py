@@ -6,6 +6,7 @@
 from __future__ import print_function  # Make print work with python 2 & 3
 import time
 import pigpio
+from neopixels import *
 
 
 # Setup GPIO
