@@ -2,6 +2,7 @@
 # Works with RedRobotics controller boards.
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
+from __future__ import print_function  # Make print work with python 2 & 3
 from neopixels import *
 import time
 import socket
