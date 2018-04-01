@@ -4,6 +4,7 @@
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from __future__ import print_function  # Make print work with python 2 & 3
+print('Please wait while modules load...')
 import time
 import pigpio
 from neopixels import *
@@ -26,8 +27,6 @@ rMotor = 0
 lMotor = 0
 RM = 0
 LM = 0
-
-
 
 pi = pigpio.pi()
  
