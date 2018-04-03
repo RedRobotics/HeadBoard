@@ -68,7 +68,7 @@ Here are some examples:
 
 
 If your IP address is 192.168.0.123, the Neopixel will flash red once, green twice and blue three times.  
-If your IP address is 172.16.1.108, the Neopixel will flash red once, it won't flash green then it will flash blue eight times.
+If your IP address is 172.16.1.108, the Neopixel will flash red once, it won't flash green then it will flash blue eight times.    
 If your IP address is 192.168.31.15, the Neopixel won't flash red, then it will flash green once then blue five times.  
 
 If you miss it, you can momentarily press the on-board push button to flash the IP address again (wait a few seconds after pressing the button. Also - don't hold the button down as this will reset the Pi - more on this later!).
