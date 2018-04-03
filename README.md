@@ -19,7 +19,7 @@ Beginner tutorials and videos coming soon.
 
 ## Installation:
 
-Download the pre-configured SD card Image onto your PC from [here](https://drive.google.com/open?id=1hCvMvku58haLAqP9_JxuQGxmqUHnMG_a).
+Download the pre-configured SD card Image onto your PC from [here](https://drive.google.com/open?id=14pfin7REGvtPW2yPzD2wdLyPoCfYgDVD).
 
 User: pi  
 Hostname: redrobotics  
