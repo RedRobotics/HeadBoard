@@ -1,6 +1,6 @@
-# Red Robotics Headboard V1.2 (Beta)
+# RedBoard Library V1.21(Beta)
 
-Python library for the Red Robotics 'HeadBoard' Raspberry Pi add on robotics board.
+Python library for the Red Robotics 'HeadBoard' and 'SideBoard' Raspberry Pi add on robotics boards.
 
 Simple python commands for controlling motors, servos and Neopixels (WS2812B).
 
@@ -60,10 +60,16 @@ If you have successfully connected to a wireless network, once your Pi has boote
 
 If it flashes white, It's not connected to the internet.
 
-You can of course use raspberrypi.local (or redrobotics.local if you are using the pre-configured SD image), but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).
+You can of course use raspberrypi.local (or redrobotics.local if you are using the pre-configured SD image), but this is not so great in a classroom full of Pi's with the same hostname! More info [here](https://learn.adafruit.com/bonjour-zeroconf-networking-for-windows-and-linux/#microsoft-windows).  
+
+The Neopixel will show the last part of your IP address by flashing different colours, red for the first digit, green for the second and blue for the last.
+
+Here are some examples: 
+
 
 If your IP address is 192.168.0.123, the Neopixel will flash red once, green twice and blue three times.  
-If your IP address is 172.16.1.108, the Neopixel will flash red once, it won't flash green then it will flash blue eight times. 
+If your IP address is 172.16.1.108, the Neopixel will flash red once, it won't flash green then it will flash blue eight times.
+If your IP address is 192.168.31.15, the Neopixel won't flash red, then it will flash green once then blue five times.  
 
 If you miss it, you can momentarily press the on-board push button to flash the IP address again (wait a few seconds after pressing the button. Also - don't hold the button down as this will reset the Pi - more on this later!).
 
@@ -105,7 +111,7 @@ Once you are connected, run the keyboard_control.py program by entering:
 
 Then hit the 'Enter' key.
 
-TIP! - The Neopixel library needs 'sudo' to work.
+TIP! - You need to use 'sudo' for the Neopixels to work.
 
 Wait for a few seconds for everything to load.
 
