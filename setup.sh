@@ -55,7 +55,7 @@ then
     echo "Shutdown script already running"
 else
     echo "Installing shutdown script" 
-    sudo sed -i -e '$i #start reset_shutdown script\nsudo python3 /home/pi/reset_shutdown.py&' /etc/rc.local
+    sudo sed -i -e '$i #start reset_shutdown script\nsudo python3 /home/pi/ip.py; sudo python3 /home/pi/reset_shutdown.py&' /etc/rc.local
 fi
 
 sudo reboot
