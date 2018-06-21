@@ -1,6 +1,6 @@
 #Python library for the Red Robotics 'HeadBoard' and 'SideBoard' Raspberry Pi add on robotics boards.
 #Simple python commands for controlling motors, servos and Neopixels (WS2812B).
-#Version 1.21 30/3/2018
+#Version 1.22 21/6/2018
 # Author: Neil Lambeth. neil@redrobotics.co.uk @NeilRedRobotics
 
 from __future__ import print_function  # Make print work with python 2 & 3
@@ -28,6 +28,9 @@ lMotor = 0
 RM = 0
 LM = 0
 
+INPUT = 1
+OUTPUT = 0
+
 pi = pigpio.pi()
  
 pi.set_mode(dira, pigpio.OUTPUT)
@@ -45,7 +48,34 @@ pi.set_PWM_frequency(pwmb, 100)
 pi.set_mode(servo_0, pigpio.OUTPUT)
 pi.set_mode(servo_1, pigpio.OUTPUT)
 
-print("Redboard Library V1.21 loaded")
+print("Redboard Library V1.22 loaded")
+
+#-----------------------------------------------------
+
+
+#GPIO 
+    
+def output_pin(p):
+    pi.set_mode(p, pigpio.OUTPUT)
+
+def input_pin(p):
+    pi.set_mode(p, pigpio.INPUT)
+
+def pull_up(p):
+    pi.set_pull_up_down(p, pigpio.PUD_UP)
+    
+def pull_down(p):
+    pi.set_pull_up_down(p, pigpio.PUD_DOWN)
+
+
+def setPin(p, state):
+    pi.write(p, state)
+
+def readPin(p):
+    r = pi.read(p)
+    return r
+
+#-----------------------------------------------------
 
 def servo0(pos0):
     if pos0 >= 0 and pos0 <91:
@@ -63,6 +93,8 @@ def servo0(pos0):
     else:
         print ("Out Of Range!")
 
+#-----------------------------------------------------
+
 def servo0_P(pos0):
     if pos0 >499 and pos0 <2501:
         print ("servo0 =",pos0)
@@ -71,12 +103,13 @@ def servo0_P(pos0):
     else:
         print ("Out Of Range!")
 
+#-----------------------------------------------------
+
 def servo0_off():
     pi.set_servo_pulsewidth(servo_0, 0)
     print ("servo0 off")
 
-
-
+#-----------------------------------------------------
  
 def servo1(pos1):
     if pos1 >= 0 and pos1 <91:
@@ -94,6 +127,7 @@ def servo1(pos1):
     else:
         print ("Out Of Range!")
 
+#-----------------------------------------------------
 
 def servo1_P(pos1):
     if pos1 >499 and pos1 <2501:
@@ -103,12 +137,13 @@ def servo1_P(pos1):
     else:
         print ("Out Of Range!")
 
+#-----------------------------------------------------
+
 def servo1_off():
     pi.set_servo_pulsewidth(servo_1, 0)
     print ("servo1 off")
 
-
-
+#-----------------------------------------------------
 
 def M1(lm):  
 
@@ -139,6 +174,7 @@ def M1(lm):
    
             pi.set_PWM_dutycycle(pwmb,LM)   
 
+#-----------------------------------------------------
 
 def M1_8bit(lm):  
 
@@ -167,7 +203,7 @@ def M1_8bit(lm):
    
             pi.set_PWM_dutycycle(pwmb,LM)   
 
-
+#-----------------------------------------------------
        
 def M2(rm):   
 
@@ -200,6 +236,8 @@ def M2(rm):
             pi.set_PWM_dutycycle(pwma,RM)
 
 
+#-----------------------------------------------------
+
 def M2_8bit(rm):  
 
             if rm > 255:  # Make sure the value sent to the motor is 255 or less
@@ -228,7 +266,7 @@ def M2_8bit(rm):
    
             pi.set_PWM_dutycycle(pwma,RM)   
   
-          
+#-----------------------------------------------------          
             
 def Stop(): 
             pi.set_PWM_dutycycle(pwma,0)
